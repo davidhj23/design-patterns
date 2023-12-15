@@ -6,3 +6,6 @@ Creational design patterns provide various object creation mechanisms, which inc
 
 ### Singleton
 Singleton is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
+
+### Factory Method
+The Factory Method design pattern defines an interface for creating an object, but let subclasses decide which class to instantiate. This pattern lets a class defer instantiation to subclasses.
