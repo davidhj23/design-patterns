@@ -1,7 +1,7 @@
-﻿using Core.FactoryMethod;
+﻿using Core.AbstractFactory;
+using Core.FactoryMethod;
 using Core.Singleton;
 using Spectre.Console;
-using System.Numerics;
 
 // Ask for the user's favorite pattern
 var pattern = AnsiConsole.Prompt(
@@ -10,7 +10,7 @@ var pattern = AnsiConsole.Prompt(
         .PageSize(23)
         //.MoreChoicesText("[grey](Move up and down to reveal more fruits)[/]")
         .AddChoices(new[] {
-            "Singleton", "Factory Method"
+            "Singleton", "Factory Method", "Abstract Factory"
         }));
 
 AnsiConsole.WriteLine($"{pattern} example!");
@@ -38,6 +38,14 @@ switch (pattern)
             Document document = creator.Create();
             AnsiConsole.WriteLine("Created {0}", document.GetType().Name);
         }
+        break;
+    case "Abstract Factory":
+        var factory = new WinFactory();
+        AnsiConsole.WriteLine("Win factory created");
+        var factoryApplication = new FactoryApplication(factory);
+        AnsiConsole.WriteLine("Factory application created");
+        factoryApplication.CreateUI();
+        AnsiConsole.WriteLine(factoryApplication.PaintButton());
         break;
     default:
         AnsiConsole.WriteLine("No pattern selected\n");
