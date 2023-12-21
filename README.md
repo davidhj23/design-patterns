@@ -9,3 +9,8 @@ Singleton is a creational design pattern that lets you ensure that a class has o
 
 ### Factory Method
 The Factory Method design pattern defines an interface for creating an object, but let subclasses decide which class to instantiate. This pattern lets a class defer instantiation to subclasses.
+
+### Abstract Factory 
+Is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
+
+![image](https://github.com/davidhj23/design-patterns/assets/12940631/6eef5b8f-c3e0-4573-8172-668cf60e1f2a)
